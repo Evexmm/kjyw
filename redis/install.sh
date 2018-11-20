@@ -7,9 +7,9 @@
 
 yum install -y nmap unzip wget lsof xz net-tools gcc make gcc-c++
 
-wget http://download.redis.io/releases/redis-2.8.24.tar.gz
-tar zxvf redis-2.8.24.tar.gz
-cd redis-2.8.24
+wget http://download.redis.io/releases/redis-4.0.10.tar.gz
+tar zxvf redis-4.0.10.tar.gz
+cd redis-4.0.10
 make
 
 mkdir  -p /opt/redis/bin/
