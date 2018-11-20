@@ -35,7 +35,7 @@
 - 有没有更好的方法，可以提高效率，快速完成呢？
 - 如果用脚本部署，只需要1分钟搞定，主要是编译redis时间，大大提高效率，快捷，快捷，快捷啊！
 - 第一步 编译redis
-- curl -s https://git.oschina.net/aqztcom/kjyw/raw/master/redis/install.sh | sh
+- curl -s https://raw.githubusercontent.com/kernespring/kjyw/master/redis/install.sh | sh
 - 第二步 拷贝redis执行文件，修改配置文件，并启动
 - curl -s https://git.oschina.net/aqztcom/kjyw/raw/master/redis/redis_port.sh | sh -s  install 8001 8009
 - 完成！
