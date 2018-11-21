@@ -14,7 +14,7 @@ After=network.target
  
 [Service]
 Type=oneshot
-ExecStart=/home/websoft/apache-tomcat-8.5.34/bin/startup.sh   //自已的tomcat目录
+ExecStart=/home/websoft/apache-tomcat-8.5.34/bin/startup.sh
 ExecStop=/home/websoft/apache-tomcat-8.5.34/bin/shutdown.sh
 ExecReload=/bin/kill -s HUP $MAINPID
 RemainAfterExit=yes
