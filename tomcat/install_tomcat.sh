@@ -23,5 +23,7 @@ PrivateTmp=true
 WantedBy=multi-user.target
 EOF
 chmod 754 /usr/lib/systemd/system/tomcat8.service
+
+systemctl daemon-reload
 systemctl enable tomcat8.service
 systemctl start tomcat8.service
