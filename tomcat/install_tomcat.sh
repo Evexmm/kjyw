@@ -7,6 +7,7 @@ cd $TOMCAT_VERSION
 
 
   cat > /usr/lib/systemd/system/tomcat8.service <<EOF
+export JAVA_HOME=/usr/local/java/jdk1.8.0_144
 [Unit]
 Description=Tomcat
 After=syslog.target network.target remote-fs.target nss-lookup.target
