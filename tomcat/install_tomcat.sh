@@ -13,8 +13,8 @@ After=syslog.target network.target remote-fs.target nss-lookup.target
 
 [Service]
 Type=forking
-PIDFile=$TOMCAT_HOME/tomcat.pid
-ExecStart=$TOMCAT_HOME/bin/startup.sh
+PIDFile=/$TOMCAT_HOME/tomcat.pid
+ExecStart=/$TOMCAT_HOME/bin/startup.sh
 ExecReload=/bin/kill -s HUP $MAINPID
 ExecStop=/bin/kill -s QUIT $MAINPID
 PrivateTmp=true
