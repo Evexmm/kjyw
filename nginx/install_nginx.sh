@@ -25,7 +25,7 @@ After=network.target
  
 [Service]
 Type=forking
-ExecStart=/usr/local/nginx/sbin/nginx   //自已的nginx目录
+ExecStart=/usr/local/nginx/sbin/nginx
 ExecStop=/usr/local/nginx/sbin/nginx -s quit
 ExecReload=/usr/local/nginx/sbin/nginx -s reload
 PrivateTmp=true
