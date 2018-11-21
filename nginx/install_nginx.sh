@@ -17,7 +17,6 @@ tar zxvf $NGINX_VERSION.tar.gz
 cd $NGINX_VERSION
 $NGINX_COMPILE_COMMAND
 make && make install
-/usr/local/nginx/sbin/nginx
 
 cat > /usr/lib/systemd/system/nginx.service <<EOF
 [Unit]
