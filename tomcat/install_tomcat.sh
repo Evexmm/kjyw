@@ -1,5 +1,6 @@
 TOMCAT_VERSION="apache-tomcat-8.5.34"
 TOMCAT_HOME="home/websoft/apache-tomcat-8.5.34"
+cd /home/websoft
 wget https://mirrors.cnnic.cn/apache/tomcat/tomcat-8/v8.5.34/bin/$TOMCAT_VERSION.tar.gz
 tar zxvf $TOMCAT_VERSION.tar.gz
 cd $TOMCAT_VERSION
