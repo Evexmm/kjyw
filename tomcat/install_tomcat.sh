@@ -9,16 +9,16 @@ sed -i "3iexport JRE_HOME=/usr/local/java/jdk1.8.0_144/jre" /home/websoft/apache
 
   cat > /usr/lib/systemd/system/tomcat8.service <<EOF
 [Unit]
-Description=Tomcat8.5.34
-After=syslog.target network.target remote-fs.target nss-lookup.target
-
+Description=tomcat
+After=network.target
+ 
 [Service]
 Type=oneshot
-ExecStart=/home/websoft/apache-tomcat-8.5.34/bin/startup.sh
-ExecReload=/bin/kill -s HUP
+ExecStart=/home/websoft/apache-tomcat-8.5.34/bin/startup.sh   //自已的tomcat目录
 ExecStop=/home/websoft/apache-tomcat-8.5.34/bin/shutdown.sh
-PrivateTmp=true
-
+ExecReload=/bin/kill -s HUP $MAINPID
+RemainAfterExit=yes
+ 
 [Install]
 WantedBy=multi-user.target
 EOF
