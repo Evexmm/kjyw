@@ -18,3 +18,24 @@ cd $NGINX_VERSION
 $NGINX_COMPILE_COMMAND
 make && make install
 /usr/local/nginx/sbin/nginx
+
+cat > /usr/lib/systemd/system/nginx.service <<EOF
+[Unit]
+Description=nginx
+After=network.target
+ 
+[Service]
+Type=forking
+ExecStart=/usr/local/nginx/sbin/nginx   //自已的nginx目录
+ExecStop=/usr/local/nginx/sbin/nginx -s quit
+ExecReload=/usr/local/nginx/sbin/nginx -s reload
+PrivateTmp=true
+ 
+[Install]
+WantedBy=multi-user.target
+EOF
+chmod 754 /usr/lib/systemd/system/nginx.service
+
+systemctl daemon-reload
+systemctl enable nginx.service
+systemctl start nginx.service
