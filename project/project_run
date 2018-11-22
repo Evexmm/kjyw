@@ -1,0 +1,13 @@
+#!/bin/sh
+case "$1" in
+start)
+nohup java -jar /home/websoft/java_jar/yzgongche/1102/beansprouts.jar --server.port=8188 > /opt/data/logs/run/yzgongche.log 2>&1&
+;;
+stop)
+kill -9 `ps -ef|grep 8188|grep -v grep|grep -v stop|awk '{print $2}'`
+;;
+restart)
+kill -9 `ps -ef|grep 8188|grep -v grep|grep -v stop|awk '{print $2}'`
+nohup java -jar /home/websoft/java_jar/yzgongche/1102/beansprouts.jar --server.port=8188 > /opt/data/logs/run/yzgongche.log 2>&1&
+;;
+esac
