@@ -3,6 +3,9 @@ project_port=$2
 
   cat > /home/websoft/java_jar/$project_name.sh <<EOF
 #!/bin/sh
+export JAVA_HOME=/usr/local/java/jdk1.8.0_131
+export PATH=$JAVA_HOME/bin:$PATH
+
 case "$1" in
 start)
 nohup java -jar /home/websoft/java_jar/$project_name/$project_name.jar --server.port=$project_port > /opt/data/logs/run/$project_name.log 2>&1&
