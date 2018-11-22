@@ -1,29 +1,29 @@
-
-  cat > /home/websoft/java_jar/yzgongche_run.sh <<EOF
+project_name=$1
+  cat > /home/websoft/java_jar/$project_name_run.sh <<EOF
 #!/bin/sh
 
 export JAVA_HOME=/usr/local/java/jdk1.8.0_131
 export PATH=$JAVA_HOME/bin:$PATH
-java -jar /home/websoft/java_jar/yzgongche/1102/beansprouts.jar > /opt/data/logs/run/yzgongche.log &
+java -jar /home/websoft/java_jar/$project_name/$project_name.jar > /opt/data/logs/run/$project_name.log &
 EOF
 
-  cat > /usr/lib/systemd/system/yzgongche.service <<EOF
+  cat > /usr/lib/systemd/system/$project_name.service <<EOF
 [Unit]
-Description=yzgongche.service for yzgongche
+Description=$project_name.service for $project_name
 After=syslog.target network.target remote-fs.target nss-lookup.target
  
 [Service]
 Type=forking
-ExecStart=/home/websoft/java_jar/yzgongche_run.sh
+ExecStart=/home/websoft/java_jar/$project_name_run.sh
 PrivateTmp=true
  
 [Install]
 WantedBy=multi-user.target
 EOF
 
-chmod 754 /usr/lib/systemd/system/yzgongche.service
-chmod 754 /home/websoft/java_jar/yzgongche_run.sh
+chmod 754 /usr/lib/systemd/system/$project_name.service
+chmod 754 /home/websoft/java_jar/$project_name_run.sh
 
 systemctl daemon-reload
-systemctl enable yzgongche.service
-systemctl start yzgongche.service
+systemctl enable $project_name.service
+systemctl start $project_name.service
