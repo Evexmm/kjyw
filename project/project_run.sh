@@ -15,10 +15,6 @@ kill -9 `ps -ef|grep $project_port|grep -v grep|grep -v stop|awk '{print $2}'`
 nohup java -jar /home/websoft/java_jar/$project_name/$project_name.jar --server.port=$project_port > /opt/data/logs/run/$project_name.log 2>&1&
 ;;
 esac
-
 EOF
-
-#sed -i "7i`ps -ef|grep $project_port|grep -v grep|grep -v stop|awk '{print $2}'`" /home/websoft/java_jar/$project_name.sh
-
 chmod 754 /home/websoft/java_jar/$project_name.sh
 
