@@ -17,7 +17,7 @@ nohup java -jar /home/websoft/java_jar/$project_name/$project_name.jar --server.
 esac
 EOF
 
-sed -i "7i`ps -ef|grep $project_port|grep -v grep|grep -v stop|awk '{print $2}'`" /home/websoft/java_jar/$project_name.sh
+#sed -i "7i`ps -ef|grep $project_port|grep -v grep|grep -v stop|awk '{print $2}'`" /home/websoft/java_jar/$project_name.sh
 
 chmod 754 /home/websoft/java_jar/$project_name.sh
 
