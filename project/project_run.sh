@@ -16,3 +16,7 @@ nohup java -jar /home/websoft/java_jar/$project_name/$project_name.jar --server.
 ;;
 esac
 EOF
+
+
+chmod 754 /home/websoft/java_jar/$project_name.sh
+
