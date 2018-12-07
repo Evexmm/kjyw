@@ -4,8 +4,8 @@ cd /home/websoft
 wget https://mirrors.cnnic.cn/apache/tomcat/tomcat-8/v8.5.35/bin/$TOMCAT_VERSION.tar.gz
 tar zxvf $TOMCAT_VERSION.tar.gz
 
-sed -i "2iexport JAVA_HOME=/usr/local/java/jdk1.8.0_191" /home/websoft/apache-tomcat-8.5.35/bin/catalina.sh
-sed -i "3iexport JRE_HOME=/usr/local/java/jdk1.8.0_191/jre" /home/websoft/apache-tomcat-8.5.35/bin/catalina.sh
+sed -i "2iexport JAVA_HOME=/usr/local/java/jdk1.8.0_131" /home/websoft/apache-tomcat-8.5.35/bin/catalina.sh
+sed -i "3iexport JRE_HOME=/usr/local/java/jdk1.8.0_131/jre" /home/websoft/apache-tomcat-8.5.35/bin/catalina.sh
 
   cat > /usr/lib/systemd/system/tomcat8.service <<EOF
 [Unit]
