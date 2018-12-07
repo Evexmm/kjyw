@@ -29,7 +29,7 @@ if ! grep "JAVA_HOME=/usr/local/java/jdk1.8.0_191" /etc/profile
 then
 	echo "export JAVA_HOME=/usr/local/java/jdk1.8.0_191" | sudo tee -a  /etc/profile
 	echo "export PATH=\$PATH:\$JAVA_HOME/bin" | sudo tee -a /etc/profile
-	echo "export CLASSPATH=.:\$JAVA_HOME/jre/lib/rt.jar:\$JAVA_HOME/lib/dt.jar:\$JAVA_HOME/lib/tools.jar'" | sudo tee -a /etc/profile
+	echo "export CLASSPATH=.:\$JAVA_HOME/jre/lib/rt.jar:\$JAVA_HOME/lib/dt.jar:\$JAVA_HOME/lib/tools.jar" | sudo tee -a /etc/profile
 fi
 	
 source /etc/profile
