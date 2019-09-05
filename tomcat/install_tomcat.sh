@@ -14,8 +14,8 @@ After=network.target
  
 [Service]
 Type=oneshot
-ExecStart=/home/websoft/apache-tomcat-8.5.39/bin/startup.sh
-ExecStop=/home/websoft/apache-tomcat-8.5.39/bin/shutdown.sh
+ExecStart=/home/websoft/apache-tomcat-8.5.45/bin/startup.sh
+ExecStop=/home/websoft/apache-tomcat-8.5.45/bin/shutdown.sh
 ExecReload=/bin/kill -s HUP $MAINPID
 RemainAfterExit=yes
  
